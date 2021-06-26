@@ -8,6 +8,8 @@
 
 👉 자바에서는 **단일 상속(single inheritance)**만을 지원❗❗
 
+👉 클래스간의 **결합도가 높아짐**
+
 ---
 
 ### 클래스 상속
@@ -43,17 +45,23 @@ class Child extends Parent {
 
 ```java
 class Animal {
-       
+  
 }
 
-class Dog extends Animal {
+class Human extends Animal {
     
 }
 
-class Cat extends Animal {
+class Tiger extends Animal {
+   
+}
+
+class Eagle extends Animal {
     
 }
 ```
 
+---
 
+### 
 
