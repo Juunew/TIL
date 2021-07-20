@@ -10,8 +10,6 @@
 
 👉 **패킷(Packet)**이라는 통신 단위로 데이터 전달
 
-![IP](C:\Users\hyukj\Desktop\IP.PNG)
-
 👉 **비신뢰성**
 
 - 패킷 손실가능
