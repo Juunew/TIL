@@ -10,7 +10,8 @@
 
 👉 **패킷(Packet)**이라는 통신 단위로 데이터 전달
 
-![IP](C:\Users\hyukj\Desktop\IP.PNG)
+![IP](https://user-images.githubusercontent.com/80582237/126341371-70eac4a5-a180-409f-87c1-df59c69a3015.PNG)
+
 
 👉 **비신뢰성**
 
