@@ -1,4 +1,4 @@
 # Index
 
-- [Computer Science](https://github.com/Juunew/TIL/tree/master/TIL/src/cs)
-- [Java](https://github.com/Juunew/TIL/tree/master/TIL/src/javastudy)
+- [Computer Science](https://github.com/Juunew/TIL/tree/master/cs)
+- [Java](https://github.com/Juunew/TIL/tree/master/java_study)
