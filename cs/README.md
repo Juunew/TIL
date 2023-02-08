@@ -123,7 +123,7 @@ Linked List의 종류
 ---
 ### Stack
 
-![stack.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2Fstack.png)
+![stack](https://user-images.githubusercontent.com/80582237/217596839-62fe6df9-e5bc-41cb-9eb0-e010c337865e.png)
 
 스택은 한쪽 끝으로만 데이터를 넣고 뺄 수 있는 **후입선출(Last-In-First-Out) - [나중에 들어온 데이터가 가장 먼저 빠져나간다]** 형태의 자료구조이다.
 
