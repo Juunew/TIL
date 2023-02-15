@@ -130,3 +130,100 @@ Linked List의 종류
 대표적으로 컴퓨터 내부 프로세스 구조의 함수 동작 방식이 스택이다. 가장 쉬운 예시로 실행 취소(ctrl + z)를 생각할 수 있다. 실행취소를 여러번 할 때 가장 최근에 수행되었던 작업부터 취소되는 것을 떠올리면 된다.
 
 ---
+### Queue
+
+![queue.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2Fqueue.png)
+
+큐는 스택과 반대로 **선입선출(First-In-First-Out) - [먼저 들어온 데이터가 먼저 빠져나간다]** 형태의 자료구조이다.
+
+맛집의 웨이팅을 생각하면 편하다! (먼저 온 사람이 먼저 먹고 퇴장!)
+
+```java
+class Queue<T> {
+    class Node<T> {
+        private T data;                 // 데이터
+        private Node<T> nextNode;       // 다음 노드
+
+        // 생성자를 통해 data를 전달받은 뒤 내부 변수에 저장
+        public Node(T data) {
+            this.data = data;
+        }
+    }
+
+    // 앞과 뒤의 주소를 알기위한 변수
+    private Node<T> first;
+    private Node<T> last;
+
+    public void add(T item) {
+        // 노드 생성!
+        Node<T> t = new Node<>(item);
+
+        // 맨 마지막 노드가 null이 아니면 노드 추가
+        if (last != null) {
+            last.nextNode = t;
+        }
+
+        last = t;
+
+        // first == null 이면 비어있는 노드이기 때문에 맨 처음 값을 t로 설정해준다.
+        if (first == null) {
+            first = last;
+        }
+    }
+
+    public T remove() {
+        // first == null 이면 비어있는 노드이기 때문에 삭제할 노드가 없다. 따라서 throw Exception
+        if (first == null) {
+            throw new NoSuchElementException();
+        }
+
+        // 맨 앞 노드를 삭제하면 그 다음 노드를 맨 앞 노드로 바꿔주는 작업
+        T data = first.data;
+        first = first.nextNode;
+
+        // 모든 요소가 삭제되었을 경우 마지막 노드도 null로 변경
+        if (first == null) {
+            last = null;
+        }
+
+        return data;
+    }
+
+    // 맨 앞 노드의 data를 반환
+    public T peek() {
+        if (first == null) {
+            throw new NoSuchElementException();
+        }
+
+        return first.data;
+    }
+
+    public boolean isEmpty() {
+        return first == null;
+    }
+}
+
+public class TestQueue {
+  public static void main(String[] args) {
+    Queue<Integer> q = new Queue<>();
+    q.add(1);
+    q.add(2);
+    q.add(3);
+    q.add(4);
+    q.add(5);
+
+    System.out.println(q.remove());     // 맨 처음 노드가 추출되고 제거된다. (기댓값 : 1)
+    System.out.println(q.peek());       // 맨 처음 노드 확인 (기댓값 : 2 - 기존 맨 처음 값인 1이 제거된 후)
+    System.out.println(q.remove());     // 맨 처음 노드가 추출되고 제거된다. (기댓값 : 2)
+    System.out.println(q.remove());     // 맨 처음 노드가 추출되고 제거된다. (기댓값 : 3)
+    System.out.println(q.peek());       // 맨 처음 노드 확인 (기댓값 : 4)
+    System.out.println(q.isEmpty());    // Queue 가 비어있는지 확인 (기댓값 : false - 4와 5가 남았기때문)
+    System.out.println(q.remove());     // 맨 처음 노드가 추출되고 제거된다. (기댓값 : 4)
+    System.out.println(q.peek());       // 맨 처음 노드 확인 (기댓값 : 5)
+    System.out.println(q.remove());     // 맨 처음 노드가 추출되고 제거된다. (기댓값 : 5)
+    System.out.println(q.isEmpty());    // Queue 가 비어있는지 확인 (기댓값 : true - 5까지 다 제거가 되었다.)
+    System.out.println(q.remove());     // 맨 처음 노드가 추출되고 제거된다. (기댓값 : Exception - 더 이상 제거할 노드가 없다)
+  }
+}
+```
+![queueTest.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FqueueTest.png)
