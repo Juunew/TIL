@@ -6,6 +6,7 @@
   - [연결 리스트](#연결리스트-linkedlist)
   - [ArrayList](#arraylist)
   - [Stack](#stack)
+  - [Queue](#queue)
 
 ---
 # 자료구조 (Data Structure)
