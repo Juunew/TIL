@@ -133,7 +133,7 @@ Linked List의 종류
 ---
 ### Queue
 
-![queue.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2Fqueue.png)
+![queue](https://user-images.githubusercontent.com/74216712/218985363-1de39b57-29b1-4e04-aae4-e2a4dcae9e0c.png)
 
 큐는 스택과 반대로 **선입선출(First-In-First-Out) - [먼저 들어온 데이터가 먼저 빠져나간다]** 형태의 자료구조이다.
 
@@ -227,4 +227,4 @@ public class TestQueue {
   }
 }
 ```
-![queueTest.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FqueueTest.png)
+![queueTest](https://user-images.githubusercontent.com/74216712/218985327-e96615da-264e-423a-8e3d-fa7ed0bab12d.png)
