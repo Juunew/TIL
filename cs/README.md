@@ -130,6 +130,71 @@ Linked List의 종류
 
 대표적으로 컴퓨터 내부 프로세스 구조의 함수 동작 방식이 스택이다. 가장 쉬운 예시로 실행 취소(ctrl + z)를 생각할 수 있다. 실행취소를 여러번 할 때 가장 최근에 수행되었던 작업부터 취소되는 것을 떠올리면 된다.
 
+```java
+class Stack<T> {
+    class Node<T> {
+        private T data;
+        private Node<T> nextNode;
+
+        public Node(T data) {
+            this.data = data;
+        }
+    }
+
+    private Node<T> top;
+
+    public T pop() {
+        // 맨 위에 값이 null -> Exception
+        if (top == null) {
+            throw new EmptyStackException();
+        }
+
+        // 맨 위 node의 data값을 item 변수에 담고, 반환! (top node의 다음 node data를 다시 top으로 설정)
+        T item = top.data;
+        top = top.nextNode;
+
+        return item;
+    }
+
+    public void push(T item) {
+        Node<T> topNode = new Node<>(item);
+        topNode.nextNode = top;
+        top = topNode;
+    }
+
+    public T peek() {
+        if (top == null) {
+            throw new EmptyStackException();
+        }
+
+        return top.data;
+    }
+
+    public boolean isEmpty() {
+        return top == null;
+    }
+}
+
+public class TestStack {
+  public static void main(String[] args) {
+    Stack<Integer> stack = new Stack<Integer>();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+
+    System.out.println(stack.pop());
+    System.out.println(stack.pop());
+    System.out.println(stack.peek());
+    System.out.println(stack.isEmpty());
+    System.out.println(stack.pop());
+    System.out.println(stack.peek());
+    System.out.println(stack.pop());
+    System.out.println(stack.isEmpty());
+  }
+}
+```
+
 ---
 ### Queue
 
@@ -228,3 +293,4 @@ public class TestQueue {
 }
 ```
 ![queueTest](https://user-images.githubusercontent.com/80582237/218985608-3d23a1bd-6def-42f8-8aa7-201ade3eea1d.png)
+---
