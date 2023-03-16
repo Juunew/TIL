@@ -300,7 +300,7 @@ public class TestQueue {
 
 ### 트리(Tree)
 
-![tree.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2Ftree.png)
+![tree](https://user-images.githubusercontent.com/80582237/225566180-d029155c-6547-41d0-827e-74976c81c2ab.png)
 
 트리는 비선형 자료구조 중 하나로 노드로 이루어져있으며 데이터들이 계층적으로 연결되어 저장된다.
 
