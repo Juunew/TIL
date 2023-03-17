@@ -341,13 +341,13 @@ public class TestQueue {
 ---
 ### 이진트리 - Binary Tree
 
-![binaryTree.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FbinaryTree.png)
+![binaryTree](https://user-images.githubusercontent.com/80582237/225905447-6d75b5df-f713-40b3-8d6e-48738247c8c6.png)
 
 이진트리는 각 노드가 최대 두 개의 자식 노드를 갖는 트리를 말한다. 각 노드는 자식 노드가 없거나, 한 개 또는 두 개 만을 갖는다.
 
 이진트리에는 다음과 같은 종류가 있다.
 
-![binaryTreeType.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FbinaryTreeType.png)
+![binaryTreeType](https://user-images.githubusercontent.com/80582237/225905494-c6da148d-b5ab-44c5-b3e5-98b57390ae6b.png)
 
 - 포화 이진 트리(Full binary tree)
   - 모든 레벨의 노드가 자식 노드를 가지고 있는 이진 트리
