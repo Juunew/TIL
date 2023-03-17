@@ -9,6 +9,7 @@
   - [Queue](#queue)
   - [비선형 자료구조](#비선형-자료구조)
   - [트리](#트리--tree-)
+  - [이진트리](#이진트리--binary-tree-)
 
 ---
 # 자료구조 (Data Structure)
@@ -331,5 +332,30 @@ public class TestQueue {
 차수 (degree)
 - 각 노드의 자식 노드의 개수
 
+트리의 차수 (degree of tree)
+- 트리의 최대 차수
+
 너비 (width)
 - 가장 많은 노드를 갖고 있는 레벨의 크기
+
+---
+### 이진트리(Binary Tree)
+
+![binaryTree.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FbinaryTree.png)
+
+이진트리는 각 노드가 최대 두 개의 자식 노드를 갖는 트리를 말한다. 각 노드는 자식 노드가 없거나, 한 개 또는 두 개 만을 갖는다.
+
+이진트리에는 다음과 같은 종류가 있다.
+
+![binaryTreeType.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FbinaryTreeType.png)
+
+- 포화 이진 트리(Full binary tree)
+  - 모든 레벨의 노드가 자식 노드를 가지고 있는 이진 트리
+  - 모든 리프 노드의 높이가 같다.
+  - 트리의 노드 개수가 2^h-1 개여야 한다. (h = 트리의 높이)
+- 완전 이진 트리(Complete Binary Tree)
+  - 마지막 레벨을 제외하고 모든 레벨이 완전히 채워져 있다
+  - 노드가 왼쪽에서 오른쪽으로 순차적으로 채워져야 한다
+- 편향 이진 트리(Skewed Binary Tree)
+  - 부모 노드의 왼쪽이나 오른쪽 한 곳만 노드가 존재하는 트리
+  - 같은 높이의 이진 트리 중에서 최소 개수의 노드 개수를 가진다.
