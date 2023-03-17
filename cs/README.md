@@ -8,7 +8,7 @@
   - [Stack](#stack)
   - [Queue](#queue)
   - [비선형 자료구조](#비선형-자료구조)
-  - [트리](#트리--tree-)
+  - [트리](#트리---tree)
   - [이진트리](#이진트리---binary-tree)
 
 ---
@@ -299,7 +299,7 @@ public class TestQueue {
 ---
 ## 비선형 자료구조
 
-### 트리(Tree)
+### 트리 - Tree
 
 ![tree](https://user-images.githubusercontent.com/80582237/225566180-d029155c-6547-41d0-827e-74976c81c2ab.png)
 
