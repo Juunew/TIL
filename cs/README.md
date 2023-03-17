@@ -9,7 +9,7 @@
   - [Queue](#queue)
   - [비선형 자료구조](#비선형-자료구조)
   - [트리](#트리--tree-)
-  - [이진트리](#이진트리--binary-tree-)
+  - [이진트리](#이진트리---binary-tree)
 
 ---
 # 자료구조 (Data Structure)
@@ -339,7 +339,7 @@ public class TestQueue {
 - 가장 많은 노드를 갖고 있는 레벨의 크기
 
 ---
-### 이진트리(Binary Tree)
+### 이진트리 - Binary Tree
 
 ![binaryTree.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2FbinaryTree.png)
 
