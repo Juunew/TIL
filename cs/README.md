@@ -359,3 +359,103 @@ public class TestQueue {
 - 편향 이진 트리(Skewed Binary Tree)
   - 부모 노드의 왼쪽이나 오른쪽 한 곳만 노드가 존재하는 트리
   - 같은 높이의 이진 트리 중에서 최소 개수의 노드 개수를 가진다.
+
+---
+### 이진탐색트리 - Binary Search Tree
+
+![bst.png](..%2F..%2F%EB%B8%94%EB%A1%9C%EA%B7%B8%2FDataStructure%2Fbst.png)
+
+이진탐색트리는 이진트리의 한 종류로 아래와 같은 특징을 가진다.
+
+- 각 노드에는 중복되지 않는 키가 있다.
+- 루트 노드의 **왼쪽 서브 트리는 루트 노드의 키보다 작은 키**를 갖는 노드들로 이루어져 있다.
+- 루트 노드의 **오른쪽 서브 트리는 루트 노드의 키보다 큰 키**를 갖는 노드들로 이루어져 있다.
+- 좌우 서브 트리도 모두 위와 같은 이진탐색트리의 특징을 갖는다.
+
+내가 찾으려는 키가 루트 노드의 키보다 작으면 왼쪽 트리로, 루트 노드의 키보다 크면 오른쪽 트리로 가면되기 때문에 기존의 이진트리보다 **탐색이 빠르다**는 장점이 있다.
+
+예를 들어 내가 키가 6인 노드를 찾아보려한다. 가장 먼저 루트 노드와의 비교가 이루어지고 6은 8보다 작은 키이기 때문에 루트노드에서 왼쪽에 존재하는 서브트리로 탐색을 옮긴다.
+그 후 6은 3보다 큰 키이기 때문에 오른쪽 방향으로 탐색이 진행되고 마침내 찾게 되었다.
+
+이진탐색트리에서는 무조건 트리의 높이(h) 이하의 탐색이 이루어진다.
+
+~~~java
+public class BinarySearchTree {
+  public static void main(String[] args) {
+
+  }
+
+  Node root = null;
+
+  public class Node {
+    int value;
+    Node leftNode;
+    Node rightNode;
+
+    public Node(int data) {
+      this.value = data;
+      this.leftNode = null;
+      this.rightNode = null;
+    }
+  }
+
+  public boolean searchNode(int data) {
+    // root == null 이면 비어있는 트리!
+    if (root == null) {
+      return false;
+    }
+
+    Node findNode = root;
+
+    while (findNode != null) {
+      if (findNode.value == data) {
+        return true;
+        // data 가 root 보다 작으면 root 의 왼쪽 트리 root 로 다시 초기화 한 후 while 문!
+      } else if (data < findNode.value) {
+        findNode = findNode.leftNode;
+        // data 가 root 보다 크다면 root 의 오른쪽 트리 root 로 다시 초기화 한 후 while 문!
+      } else {
+        findNode = findNode.rightNode;
+      }
+    }
+
+    // while 문을 다 돌았으면 찾으려는 값이 없기때문에 false
+    return false;
+  }
+
+  public boolean insertNode(int data) {
+    // CASE 1 : Node 가 하나도 없을 때
+    if (root == null) {
+      root = new Node(data);
+    } else {
+      // CASE 2 : Node 가 하나 이상 들어가 있을 때
+      Node findNode = root;
+      while (true) {
+        // CASE 2-1 : 현재 Node 의 왼쪽에 Node 가 insert
+        if (data < findNode.value) {
+          // 왼쪽 Node 가 존재하면 다시 한번 data 와 Node 의 value 비교!
+          if (findNode.leftNode != null) {
+            findNode = findNode.leftNode;
+            // 왼쪽 Node 가 비어있으면 data 를 value 로 가지는 Node 생성 && while 문 break!!
+          } else {
+            findNode.leftNode = new Node(data);
+            break;
+          }
+          // CASE 2-2 : 현재 Node 의 오른쪽에 Node 가 insert
+        } else {
+          // 오른쪽 Node 가 존재하면 다시 한번 data 와 Node 의 value 비교!
+          if (findNode.rightNode != null) {
+            findNode = findNode.rightNode;
+            // 오른쪽 Node 가 비어있으면 data 를 value 로 가지는 Node 생성 && while 문 break!
+          } else {
+            findNode.rightNode = new Node(data);
+            break;
+          }
+        }
+      }
+    }
+    return true;
+  }
+
+}
+~~~
